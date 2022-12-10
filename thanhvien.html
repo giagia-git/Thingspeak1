@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thành viên</title>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</head>
+<body>
+    <div class="container-fluid">
+
+        <div class="row header">
+            <div class="link"> 
+                <a href="https://www.ctu.edu.vn/"><img src="https://phungb1905815ctu.github.io/website/Logo CTU.png" align="left" width="80" height="80"></a>
+            </div>
+        <div class="btn-group" role="group" aria-label="Basic example">
+            <button type="button" class="btn pageTrangchu">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-house-door" viewBox="0 0 16 16">
+                    <path d="M8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4.5a.5.5 0 0 0 .5-.5v-4h2v4a.5.5 0 0 0 .5.5H14a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146zM2.5 14V7.707l5.5-5.5 5.5 5.5V14H10v-4a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5v4H2.5z"/>
+                  </svg>    
+                <a href="./index.html"><b>Trang chủ</b></a>
+            </button>
+
+            <button type="button" class="btn pageThanhvien">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person" viewBox="0 0 16 16">
+                    <path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0zm4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10z"/>
+                  </svg>
+                <a href="#"><b>Thành viên</b></a>
+            </button>
+
+            <button type="button" class="btn pageYTuong">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-info-circle" viewBox="0 0 16 16">
+                    <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+                    <path d="m8.93 6.588-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"/>
+                  </svg>
+                <a href="./ytuong.html"><b>Ý tưởng</b></a>
+            </button>
+
+            <button type="button" class="btn pageNhapxuathang">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-keyboard" viewBox="0 0 16 16">
+                    <path d="M14 5a1 1 0 0 1 1 1v5a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1h12zM2 4a2 2 0 0 0-2 2v5a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2H2z"/>
+                    <path d="M13 10.25a.25.25 0 0 1 .25-.25h.5a.25.25 0 0 1 .25.25v.5a.25.25 0 0 1-.25.25h-.5a.25.25 0 0 1-.25-.25v-.5zm0-2a.25.25 0 0 1 .25-.25h.5a.25.25 0 0 1 .25.25v.5a.25.25 0 0 1-.25.25h-.5a.25.25 0 0 1-.25-.25v-.5zm-5 0A.25.25 0 0 1 8.25 8h.5a.25.25 0 0 1 .25.25v.5a.25.25 0 0 1-.25.25h-.5A.25.25 0 0 1 8 8.75v-.5zm2 0a.25.25 0 0 1 .25-.25h1.5a.25.25 0 0 1 .25.25v.5a.25.25 0 0 1-.25.25h-1.5a.25.25 0 0 1-.25-.25v-.5zm1 2a.25.25 0 0 1 .25-.25h.5a.25.25 0 0 1 .25.25v.5a.25.25 0 0 1-.25.25h-.5a.25.25 0 0 1-.25-.25v-.5zm-5-2A.25.25 0 0 1 6.25 8h.5a.25.25 0 0 1 .25.25v.5a.25.25 0 0 1-.25.25h-.5A.25.25 0 0 1 6 8.75v-.5zm-2 0A.25.25 0 0 1 4.25 8h.5a.25.25 0 0 1 .25.25v.5a.25.25 0 0 1-.25.25h-.5A.25.25 0 0 1 4 8.75v-.5zm-2 0A.25.25 0 0 1 2.25 8h.5a.25.25 0 0 1 .25.25v.5a.25.25 0 0 1-.25.25h-.5A.25.25 0 0 1 2 8.75v-.5zm11-2a.25.25 0 0 1 .25-.25h.5a.25.25 0 0 1 .25.25v.5a.25.25 0 0 1-.25.25h-.5a.25.25 0 0 1-.25-.25v-.5zm-2 0a.25.25 0 0 1 .25-.25h.5a.25.25 0 0 1 .25.25v.5a.25.25 0 0 1-.25.25h-.5a.25.25 0 0 1-.25-.25v-.5zm-2 0A.25.25 0 0 1 9.25 6h.5a.25.25 0 0 1 .25.25v.5a.25.25 0 0 1-.25.25h-.5A.25.25 0 0 1 9 6.75v-.5zm-2 0A.25.25 0 0 1 7.25 6h.5a.25.25 0 0 1 .25.25v.5a.25.25 0 0 1-.25.25h-.5A.25.25 0 0 1 7 6.75v-.5zm-2 0A.25.25 0 0 1 5.25 6h.5a.25.25 0 0 1 .25.25v.5a.25.25 0 0 1-.25.25h-.5A.25.25 0 0 1 5 6.75v-.5zm-3 0A.25.25 0 0 1 2.25 6h1.5a.25.25 0 0 1 .25.25v.5a.25.25 0 0 1-.25.25h-1.5A.25.25 0 0 1 2 6.75v-.5zm0 4a.25.25 0 0 1 .25-.25h.5a.25.25 0 0 1 .25.25v.5a.25.25 0 0 1-.25.25h-.5a.25.25 0 0 1-.25-.25v-.5zm2 0a.25.25 0 0 1 .25-.25h5.5a.25.25 0 0 1 .25.25v.5a.25.25 0 0 1-.25.25h-5.5a.25.25 0 0 1-.25-.25v-.5z"/>
+                  </svg>
+                <a href="./nhapxuathang.html"><b>Nhập xuất hàng</b></a>
+                </button>
+
+            <button type="button" class="btn pageThongke">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-list-columns-reverse" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M0 .5A.5.5 0 0 1 .5 0h2a.5.5 0 0 1 0 1h-2A.5.5 0 0 1 0 .5Zm4 0a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1h-10A.5.5 0 0 1 4 .5Zm-4 2A.5.5 0 0 1 .5 2h2a.5.5 0 0 1 0 1h-2a.5.5 0 0 1-.5-.5Zm4 0a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5Zm-4 2A.5.5 0 0 1 .5 4h2a.5.5 0 0 1 0 1h-2a.5.5 0 0 1-.5-.5Zm4 0a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5Zm-4 2A.5.5 0 0 1 .5 6h2a.5.5 0 0 1 0 1h-2a.5.5 0 0 1-.5-.5Zm4 0a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 0 1h-8a.5.5 0 0 1-.5-.5Zm-4 2A.5.5 0 0 1 .5 8h2a.5.5 0 0 1 0 1h-2a.5.5 0 0 1-.5-.5Zm4 0a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 0 1h-8a.5.5 0 0 1-.5-.5Zm-4 2a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 0 1h-2a.5.5 0 0 1-.5-.5Zm4 0a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1h-10a.5.5 0 0 1-.5-.5Zm-4 2a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 0 1h-2a.5.5 0 0 1-.5-.5Zm4 0a.5.5 0 0 1 .5-.5h6a.5.5 0 0 1 0 1h-6a.5.5 0 0 1-.5-.5Zm-4 2a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 0 1h-2a.5.5 0 0 1-.5-.5Zm4 0a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5Z"/>
+                  </svg>
+                <a href="./thongke.html"> <b>Thống kê </b></a>
+            </button>
+
+            <button type="button" class="btn pageLienhe">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-lines-fill" viewBox="0 0 16 16">
+                    <path d="M6 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm-5 6s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H1zM11 3.5a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 0 1h-4a.5.5 0 0 1-.5-.5zm.5 2.5a.5.5 0 0 0 0 1h4a.5.5 0 0 0 0-1h-4zm2 3a.5.5 0 0 0 0 1h2a.5.5 0 0 0 0-1h-2zm0 3a.5.5 0 0 0 0 1h2a.5.5 0 0 0 0-1h-2z"/>
+                  </svg>
+                <a href="./lienhe.html"> <b>Liên hệ</b></a>
+            </button>
+        </div>
+
+        <video playsinline autoplay muted loop id="video">
+            <source src="https://phungb1905815ctu.github.io/website/videochung.mp4" type="video/mp4">
+          </video>
+
+        <div class="row main">
+            <div class="slides-container">
+                <span class="slides-div-span" id="slides-span1"></span>
+                <span class="slides-div-span" id="slides-span2"></span>
+
+                <div class="image-slider">
+                    <div class="slides-div" id="slide-1">
+                        <img src="./Hinhanh/1.jpg" alt="" class="img" 
+                        id="img1">
+                        <a href="#slider-span1" class="button" 
+                        id="button-1"></a>
+                        <div class="intro">
+                            <h1>Nguyễn Văn A</h1>
+                            <p>The <span>Nguyễn Văn A</span> là sinh viên</p>
+                        </div>
+                    </div>
+
+                    <div class="slides-div" id="slide-2">
+                        <img src="./Hinhanh/2.jpg" alt="" class="img" 
+                        id="img2">
+                        <a href="#slider-span2" class="button" 
+                        id="button-2"></a>
+                        <div class="intro">
+                            <h1>Nguyễn Văn A</h1>
+                            <p>The <span>Nguyễn Văn A</span> là sinh viên khoa Công nghiệp thuộc Đại học Bách Khoa</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</body>
+
+<script defer src="thanhvien.js"></script>
+</html>
+
+<style>
+    * {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    border: 0;
+}
+
+body {
+    width: 100%;
+    height: 100%;
+}
+
+.header {
+    width: 100%;
+    height: 100vh;
+    background-color: #243342;
+    overflow: hidden;
+}
+
+.btn-group {
+    display: flex;
+    margin: 1em;
+    justify-content: center;
+}
+
+.link {
+    width: auto;
+    height: auto;
+    display: block;
+    margin: 1em;
+    justify-content: left;
+}
+.btn-group > button {
+    padding: 8px 10px;
+    border-radius: 10px;
+    margin: 0 1em;
+    border: double;
+    font-size: 20px;
+    background-color:white;
+}
+
+.btn-group button a {
+  text-decoration: none;
+  font-size: 20px;
+  color: black;
+}
+
+.btn-group > button:hover {
+    opacity: 0.8;
+    cursor: pointer;
+}
+
+#video {
+    width: 100%;
+ height: 100vh;
+ object-fit: cover;
+}
+ .copyright {
+   position: fixed;
+   bottom: 0;
+   background: rgba(0, 0, 0, 0.5);
+   color: #f1f1f1;
+   width: 100%;
+   padding: 10px;
+   height: 6%;
+   text-align: center;
+ }
+   #customers {
+            position: fixed;
+            border-collapse: collapse;
+            width: 35%;
+            top: 20%;
+            left:10%;
+            height: 20%;
+            background: rgb(255, 255, 255, 0.7);
+        }
+   #customers td, #customers th {
+            border: 1px solid black;
+            padding: 6px; 
+            text-align: left;
+            color: black;
+
+
+        }
+    #customers tr:nth-child(even){
+                background-color: rgb(255, 255, 255, 0.7);
+        }
+    #customers tr:hover {background-color:#00BFFF;}
+    #customers th {
+            text-align: center;
+            background-color: rgb(255, 255, 255, 0.9);
+            color: black;
+            padding: 6px;
+        }
+
+
+
+    #profile {
+            position: fixed;
+            border-collapse: collapse;
+            width: 35%;
+            top: 45%;
+            left:10%;
+            height: 35%;
+            background: rgb(255, 255, 255, 0.5);
+        }
+    #profile td, #profile th {
+            border: 1px solid black;
+            padding: 6px; 
+            text-align: left;
+            color: black;
+        }
+    #profile th {
+            text-align: center;
+            background-color: rgb(255, 255, 255, 0.9);
+            color: black;
+            padding: 6px;
+        }
+        
+    
+/* Main */
+.main {
+    width: 100%;
+    height: 100vh;
+    padding: 0;
+    margin-top: 6em;
+}
+
+/* Scroll */
+body::-webkit-scrollbar {
+    width: 0;
+}
+
+body::-webkit-scrollbar-thumb {
+    width: 0;
+}
+
+body::-webkit-scrollbar-track {
+    width: 0;
+}
+
+/* Slide */
+.slide-container {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    background-color: red;
+    z-index: 100;
+}
+
+.image-slider {
+    width: 100%;
+    height: 60vh;
+    position: absolute;
+    left: 0;
+    top: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: .7s;
+    margin-top: 2em;
+}
+
+.slides-div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 30px 0 30px;
+}
+
+.img {
+    position: relative;
+    width: 240px;
+    height: 370px;
+    transition: .7s;
+    filter: saturate(10%);
+    object-fit: cover;
+    border-radius: 5%;
+}
+
+.button {
+    position: absolute;
+    width: 240px;
+    height: 370px;
+    transition: .7s;
+    background-color: rgba(0, 0, 0, .4);
+    border-radius: 5%;
+}
+
+.intro {
+    bottom: -5px;
+    position: absolute;
+    width: 240px;
+    height: 60px;
+    padding: 6px;
+    box-sizing: border-box;
+    background-color: rgba(27, 27, 27, .8);
+    color: white;   
+    overflow: hidden;
+    transition: 0.7s;
+    border-radius: 5%;
+}
+
+.intro h1 {
+    margin: 10px;
+    font-size: 20px;
+    text-align: center;
+}
+
+.intro p {
+    font-size: 18px;
+    margin: 5px;
+    opacity: 0;
+}
+
+.intro span {
+    font-weight: bold;
+}
+
+.button:hover {
+    background-color: rgba(0, 0, 0, .2);
+}
+
+::-webkit-scrollbar {
+   width: 0;
+ }
+
+ ::-webkit-scrollbar-thumb {
+   width: 0;
+ }
+
+ ::-webkit-scrollbar-track {
+   width: 0;
+ }
+
+</style>
